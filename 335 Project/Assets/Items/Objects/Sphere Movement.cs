@@ -20,7 +20,7 @@ public class SphereMovement : MonoBehaviour
     {
         HealthSystem healthSystem = collision.gameObject.GetComponent<HealthSystem>();
 
-        if (healthSystem != null)
+        if (healthSystem != null && healthSystem.myType != HealthSystem.Type.player)
         {
             healthSystem.TakeDamage(damage);
             Destroy(this.gameObject);
